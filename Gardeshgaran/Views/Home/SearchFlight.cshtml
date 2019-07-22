@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Repository.Models.ViewModels.FlightViewModel>
+
+@{
+    ViewBag.Title = "SearchFlight";
+}
+
+<h2>جستجوی پرواز</h2>
+@using (Html.BeginForm("SearchFlight", "Home", FormMethod.Post))
+{
+    <div>
+        یک طرفه
+        <br />
+        @Html.RadioButton("Direction", "ONEWAY", true)
+        <br />
+        رفت و برگشت
+        <br />
+        @Html.RadioButton("Direction", "ROUNDTRIP")
+        <br />
+        @Html.DropDownList("Origin", (List<SelectListItem>)TempData["Airports"])
+        @Html.DropDownList("Destination", (List<SelectListItem>)TempData["Airports"])
+
+        @Html.TextBox("DepartureDate", "28/6/2019")
+        @Html.TextBox("ReturnDate", "")
+
+        @Html.DropDownList("CabinType", new List<SelectListItem> {
+        new SelectListItem{Text="Econome",Value="1",Selected=true},
+        new SelectListItem{Text="Business-K",Value="2"},
+        new SelectListItem{Text="Business-C",Value="3"},
+
+    })
+
+        <b>Adult</b>
+        @Html.DropDownList("Adult",new List<SelectListItem> {
+            new SelectListItem{Text="1",Value="1",Selected=true},
+            new SelectListItem{Text="2",Value="2"},
+            new SelectListItem{Text="3",Value="3"},
+            new SelectListItem{Text="4",Value="4"},
+            new SelectListItem{Text="5",Value="5"},
+            new SelectListItem{Text="6",Value="6"},
+            new SelectListItem{Text="7",Value="7"},
+            new SelectListItem{Text="8",Value="8"},
+            new SelectListItem{Text="9",Value="9"},
+
+        })
+        <b>Children</b>
+        @Html.DropDownList("Children",new List<SelectListItem> {
+        new SelectListItem{Text="0",Value="0",Selected=true},
+        new SelectListItem{Text="1",Value="1"},
+        new SelectListItem{Text="2",Value="2"},
+        new SelectListItem{Text="3",Value="3"},
+        new SelectListItem{Text="4",Value="4"},
+        new SelectListItem{Text="5",Value="5"},
+
+    })
+        <b>Infant</b>
+        @Html.DropDownList("Infant",new List<SelectListItem> {
+        new SelectListItem{Text="0",Value="0",Selected=true},
+        new SelectListItem{Text="1",Value="1"},
+        new SelectListItem{Text="2",Value="2"},
+        new SelectListItem{Text="3",Value="3"},
+        new SelectListItem{Text="4",Value="4"},
+
+    })
+
+        <input type="submit" name="submit" value="جستجو" />
+
+    </div>
+
+}
+
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FromCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureFlightDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureFlightTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalFlightDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalFlightTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirLineName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EAirLineName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassengersCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdultSalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildSalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfantSalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirplaneName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EAirplaneName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureFlightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureFlightTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalFlightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalFlightTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirLineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EAirLineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassengersCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdultSalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildSalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InfantSalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightClass)
+            </td>
+            <td>
+                @Html.ActionLink("جزییات", "Details", new { /* id=item.PrimaryKey */ }) |
+            </td>
+        </tr>
+    }
+
+</table>

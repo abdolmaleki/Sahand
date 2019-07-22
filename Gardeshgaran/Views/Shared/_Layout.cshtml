@@ -1,0 +1,61 @@
+﻿@using Utility.Constant
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Gardeshgaran</title>
+
+</head>
+<body>
+
+    @*
+         _____             ____            _   _
+        |_   _|__  _ __   / ___|  ___  ___| |_(_) ___  _ __
+          | |/ _ \| '_ \  \___ \ / _ \/ __| __| |/ _ \| '_ \
+          | | (_) | |_) |  ___) |  __/ (__| |_| | (_) | | | |
+          |_|\___/| .__/  |____/ \___|\___|\__|_|\___/|_| |_|
+                  |_|
+    *@
+
+    <div id="top-section">
+        @if (Session[SessionKey.UserID] != null)
+        {
+            <a href="">@Session[SessionKey.UserFullName]</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Login","Account")">ورود</a>
+        }
+    </div>
+
+    @*
+         ____            _
+        | __ )  ___   __| |_   _
+        |  _ \ / _ \ / _` | | | |
+        | |_) | (_) | (_| | |_| |
+        |____/ \___/ \__,_|\__, |
+                           |___/
+    *@
+
+    <div id="body-section">
+        @RenderBody()
+
+        @*
+
+            _____           _
+            |  ___|__   ___ | |_ ___ _ __
+            | |_ / _ \ / _ \| __/ _ \ '__|
+            |  _| (_) | (_) | ||  __/ |
+            |_|  \___/ \___/ \__\___|_|
+
+        *@
+        <hr />
+        <footer style="color:black">
+            <p>&copy; @DateTime.Now.Year - Gardeshgaran</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
