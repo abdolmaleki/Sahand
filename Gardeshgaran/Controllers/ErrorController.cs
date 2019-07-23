@@ -1,5 +1,4 @@
-﻿
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Gardeshgaran.Controllers
 {
@@ -10,6 +9,7 @@ namespace Gardeshgaran.Controllers
             return View();
         }
         public ActionResult HTTP501()
+
         {
             return View();
         }

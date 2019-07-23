@@ -10,15 +10,6 @@ namespace Gardeshgaran.Controllers
     {
         public ActionResult GetFlightInfo(int FlightID)
         {
-            try
-            {
-                var flightInfo = GetCustomFlightInfo(FlightID);
-            }
-            catch (Exception e)
-            {
-                RedirectToAction("HTTP500", "Error", new { ErrorMessage = e.Message });
-            }
-
             return View();
         }
         public ActionResult AddPassanger()
