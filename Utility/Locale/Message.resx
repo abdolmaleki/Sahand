@@ -129,4 +129,7 @@
   <data name="SERVER_CONNECTION_ERROR" xml:space="preserve">
     <value>خطای دسترسی به سرور</value>
   </data>
+  <data name="SERVER_ERROR" xml:space="preserve">
+    <value>خطای سرور</value>
+  </data>
 </root>

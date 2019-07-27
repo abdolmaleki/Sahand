@@ -52,14 +52,14 @@ namespace Gardeshgaran.Controllers
                 {
                     ViewBag.Error = response.ErrorString;
                 }
-                ServiceResponseModel flightRecponse = flightService.GetAvailablity(searchForm);
-                if (flightRecponse.Data != null)
+                ServiceResponseModel flightResponse = flightService.GetAvailablity(searchForm);
+                if (flightResponse.Data != null)
                 {
-                    AllFlights = (List<FlightViewModel>)flightRecponse.Data;
+                    AllFlights = (List<FlightViewModel>)flightResponse.Data;
                 }
                 else
                 {
-                    ViewBag.Error = flightRecponse.ErrorString;
+                    ViewBag.Error = flightResponse.ErrorString;
                 }
             }
             catch (Exception e)

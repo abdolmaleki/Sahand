@@ -95,5 +95,14 @@ namespace Utility.Locale {
                 return ResourceManager.GetString("SERVER_CONNECTION_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطای سرور.
+        /// </summary>
+        public static string SERVER_ERROR {
+            get {
+                return ResourceManager.GetString("SERVER_ERROR", resourceCulture);
+            }
+        }
     }
 }
