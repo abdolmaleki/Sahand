@@ -10,6 +10,11 @@ namespace Application.Mapper
 {
     public class AvailabilityMapper
     {
+        /// <summary>
+        /// Convert atlasject avalaibility to flightviewModel
+        /// </summary>
+        /// <param name="availability"></param>
+        /// <returns></returns>
         public static List<FlightViewModel> ConvertAtlasjetAvailabilityToViewModels(AvailabilityData availability)
         {
             List<FlightViewModel> AllFlights = new List<FlightViewModel>();

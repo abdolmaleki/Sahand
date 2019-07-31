@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Utility.Constant
 {
+    /// <summary>
+    /// Constant values for session keys
+    /// </summary>
     public class SessionKey
     {
         /* USER INFO

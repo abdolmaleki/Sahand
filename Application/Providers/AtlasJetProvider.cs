@@ -13,6 +13,9 @@ using System.Web;
 
 namespace Application.Provider
 {
+    /// <summary>
+    /// Provide services for atlasjet flights
+    /// </summary>
     public class AtlasJetProvider
     {
         private static AtlasjetClient client;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Utility.Constant
 {
+    /// <summary>
+    /// Constant Class for Languages
+    /// </summary>
     public class Language
     {
         public static readonly string English = "EN";

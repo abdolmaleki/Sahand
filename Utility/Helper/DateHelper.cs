@@ -9,6 +9,10 @@ namespace Utility.Helper
 {
     public static class DateHelper
     {
+        /// <summary>
+        /// change datetime to string type
+        /// </summary>
+        /// <returns></returns>
         public static string DateToString(DateTime dt)
         {
             PersianCalendar pc = new PersianCalendar();
@@ -25,7 +29,11 @@ namespace Utility.Helper
                 throw;
             }
         }
-
+        /// <summary>
+        /// Change Miladi date to persian date in string format
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static string ToPersianDate(this DateTime date)
         {
             PersianCalendar pc = new PersianCalendar();
@@ -42,7 +50,11 @@ namespace Utility.Helper
                 return "";
             }
         }
-
+        /// <summary>
+        /// Change Miladi date to persian time in string format
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static string ToPersianTime(this DateTime date)
         {
             PersianCalendar pc = new PersianCalendar();
@@ -59,7 +71,11 @@ namespace Utility.Helper
                 throw;
             }
         }
-
+        /// <summary>
+        /// Change number's font to persian type
+        /// </summary>
+        /// <param name="str">string includes numbers</param>
+        /// <returns></returns>
         public static string ConvertNumbersToPersian(this string str)
         {
             try
@@ -71,7 +87,11 @@ namespace Utility.Helper
                 throw;
             }
         }
-
+        /// <summary>
+        /// Convert Datetime to timestamp
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static double ConvertToUnixTimestamp(DateTime date)
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);

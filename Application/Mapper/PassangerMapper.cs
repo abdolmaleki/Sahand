@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Application.Mapper
 {
+    /// <summary>
+    /// Convert Atlasjet Passanger data to AddPassangerViewModel viewModel
+    /// </summary>
     public class PassangerMapper
     {
         public static PassengersData[] ConvertPassengerViewModelToArray(AddPassangerViewModel viewModel)
@@ -32,8 +35,6 @@ namespace Application.Mapper
             passengerSSRDatas[0].ssrtext = "Y";
             passengerSSRDatas[0].ssrcode = "WCHC";
             passengerSSRDatas[0].ssravail = "8";
-
-
 
             for (int i = 0; i < passangerCount; i++)
             {
