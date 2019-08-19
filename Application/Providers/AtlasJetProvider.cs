@@ -188,9 +188,13 @@ namespace Application.Provider
         /// <param name="sc"></param>
         /// <param name="spetypeid">Special price code </param>
         /// <returns></returns>
-        public ServiceResponseModel GetSelectedFlightInfo(string userName, string password, string locale, string direction, string depvoyagecode, string depclass, string retvoyagecode, string retclass, int adult, int child, int inf, int ogr, int tsk, int yp, int sc, string spetypeid)
+        public static ServiceResponseModel GetSelectedFlightInfo(string direction, string depvoyagecode, string depclass, string retvoyagecode, string retclass, int adult, int child, int inf, int ogr, int tsk, int yp, int sc, string spetypeid)
         {
-            FareQuoteData fareQuoteData = client.fares(userName, password, locale, direction, depvoyagecode, depclass, retvoyagecode, retclass, adult, child, inf, ogr, tsk, yp, sc, spetypeid);
+            string userName = ConfigurationManager.AppSettings["AtlasjetUsername"].ToString();
+            string password = ConfigurationManager.AppSettings["AtlasjetPassword"].ToString();
+
+
+            FareQuoteData fareQuoteData = client.fares(userName, password, Language.English, direction, depvoyagecode, depclass, retvoyagecode, retclass, adult, child, inf, ogr, tsk, yp, sc, spetypeid);
             if (fareQuoteData.faresData != null)
             {
                 return new ServiceResponseModel(fareQuoteData, null);

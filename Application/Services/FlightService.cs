@@ -15,7 +15,7 @@ namespace Application.Services
     {
         private FlightService()
         {
-
+                    
         }
         private static FlightService flightService;
         public static FlightService GetInstance()
@@ -99,7 +99,7 @@ namespace Application.Services
                 case ServiceProvider.GRG:
                     return GRGProvider.GetCustomFlightInfo(Convert.ToInt16(args[0]));
                 default:
-                    return null;
+                    return AtlasJetProvider.GetSelectedFlightInfo(args[0], args[1], args[2], args[3], args[4], Convert.ToInt16(args[5]), Convert.ToInt16(args[6]), Convert.ToInt16(args[7]), Convert.ToInt16(args[8]), Convert.ToInt16(args[9]), Convert.ToInt16(args[10]), Convert.ToInt16(args[11]), args[12]);
             }
 
         }
@@ -170,7 +170,6 @@ namespace Application.Services
                         BookingData bookingData = (BookingData)response.Data;
                         if (!String.IsNullOrEmpty(bookingData.pnrnumber))
                         {
-                            InsertFlightToSahand();
                             return response;
                         }
                     }
@@ -178,11 +177,6 @@ namespace Application.Services
                 default:
                     return null;
             }
-        }
-
-        public void InsertFlightToSahand()
-        {
-
         }
     }
 }

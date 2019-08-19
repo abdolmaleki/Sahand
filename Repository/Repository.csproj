@@ -83,7 +83,6 @@
     <Compile Include="Models\Entity\Airplane.cs" />
     <Compile Include="Models\Entity\Airport.cs" />
     <Compile Include="Models\Entity\City.cs" />
-    <Compile Include="Models\Entity\Flight.cs" />
     <Compile Include="Models\Entity\Passanger.cs" />
     <Compile Include="Models\Entity\Passport.cs" />
     <Compile Include="Models\Entity\Ticket.cs" />
